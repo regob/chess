@@ -312,8 +312,13 @@ found:
 // megnézi vége-e a játéknak, ha a "color" van soron
 int Board::game_state(int color){
     
-    // ha a playernek nincs lépése: játék vége, és az eredmény attól függ sakkban áll-e
-    // ha van lépése, akkor nincs vége még
+    // ha csak királyok maradtak, döntetlen
+    for(int i = 0; i < 8; i++)
+        for(int j = 0; j < 8; j++)
+            if(board[i][j] && !(board[i][j] & KING)) goto not_tie;
+    return TIE;
+    
+not_tie:
     
     for(int i = 0; i < 8; i++)
         for(int j = 0; j < 8; j++)
@@ -323,8 +328,7 @@ int Board::game_state(int color){
                         if(valid_move(i, j, ci, cj))
                             return 0; // létezik lépés
                         
-
-
+    // ha a playernek nincs lépése: játék vége, és az eredmény attól függ sakkban áll-e
     // meg kell keresni a királyt
     int king_x, king_y;
     for(king_x = 0; king_x < 8; king_x++)
