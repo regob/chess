@@ -1,4 +1,5 @@
-# Kliens-szerver sakk alkalmazás
+# Kliens-szerver sakk alkalmazás 
+[_in English_](./README_en.md)
 
 # Feladat kiírás
 A feladat egy sakk szerver alkalmazás megvalósítása, amihez kliensek csatlakozhatnak, és játékot kezdeményezhetnek.
