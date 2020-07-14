@@ -46,6 +46,3 @@ A kliens külön is fordítható, a client/bin mappában az alábbi parancsokkal
 qmake ../client.pro
 make
 ```
-
-**Bemutató videó URL:**
-https://youtu.be/HGdWDMJ7Pv0
