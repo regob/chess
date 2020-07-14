@@ -35,5 +35,3 @@ GNU make, g++, qmake (qt5-qmake, qmake-qt5), Qt5 library (with headers)
 # Run
 To compile the project run the **make** command at the root directory of the project. The **server/bin/server** executable runs the server application. It needs a write permission on the current working directory. The client application is located at **client/bin/client**.
 
-**URL of the video presenting the application (unfortunately in Hungarian):**
-https://youtu.be/HGdWDMJ7Pv0
