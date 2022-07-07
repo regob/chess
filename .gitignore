@@ -1,3 +1,4 @@
 *.o
 *.db
 server/bin
+.idea/
