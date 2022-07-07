@@ -67,7 +67,7 @@ void GameWindow::on_actionConnect_triggered()
 {
     QInputDialog dlg;
     dlg.setLabelText("Connect to server");
-    dlg.setTextValue("127.0.0.1");
+    dlg.setTextValue("127.0.0.1:25000");
     if(dlg.exec() == QDialog::Accepted)
     {
         emit ui->gameWidget->connectTo(dlg.textValue());

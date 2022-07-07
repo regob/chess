@@ -7,7 +7,7 @@
 
 #include "../message.hpp"
 
-// a szerver szolgáltatás portja
+// a szerver szolgáltatás default portja
 #define PORT "25000"
 
 // a poll() hívás timeout ideje ms-ban a kliensek kezelésekor
@@ -17,7 +17,7 @@
 extern MessageQueue in_msg, out_msg;
 
 // elindítja a szerver futását
-void start_server();
+void start_server(const char*);
 
 // a kliens socketeket figyelő, és olvasó szálfüggvény
 void* handle_clients(void*);

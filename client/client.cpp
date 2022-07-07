@@ -1,7 +1,8 @@
 #include <string>
-#include "client.h"
-
+#include <stdlib.h>
 #include <iostream>
+
+#include "client.h"
 
 Client *client;
 
@@ -26,6 +27,24 @@ void Client::setStatus(enum status s){
 
 // csatlakozik egy szerverhez
 void Client::connectTo(QString server){
+    int sep_cnt = server.count(':');
+    if (sep_cnt > 1){
+        emit error("Invalid server address.");
+        return;
+    }
+    
+    uint16_t port = SERVER_PORT;
+    if (sep_cnt == 1) {
+        QStringList parts = server.split(':');
+        server = parts[0];
+        std::string port_str = parts[1].toStdString();
+        int port_candidate = atoi(port_str.c_str());
+        if (port_candidate <= 0 or port_candidate >= (1 << 16)){
+            emit error("Invalid port.");
+            return;
+        }
+        port = port_candidate;
+    }
 
     // ha volt eddigi kapcsolat, az megszűnik
     setStatus(Disconnected);
@@ -35,7 +54,7 @@ void Client::connectTo(QString server){
 
     connect(sock, SIGNAL(disconnected()), this, SLOT(disconnected()));
 
-    sock->connectToHost(server, SERVER_PORT);
+    sock->connectToHost(server, port);
 
     // ha nem sikerül csatlakozni, hibakezelés
     if(!sock->waitForConnected(3000)){

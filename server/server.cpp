@@ -23,7 +23,7 @@ std::vector<pollfd> clients, new_clients;
 pthread_mutex_t new_clients_mutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t new_clients_empty = PTHREAD_COND_INITIALIZER;
 
-void start_server(){
+void start_server(const char *port=NULL){
     struct addrinfo hints;
     struct addrinfo *res, *res_saved;
 
@@ -32,7 +32,9 @@ void start_server(){
     hints.ai_family = AF_UNSPEC;
     hints.ai_socktype = SOCK_STREAM;
 
-    int err = getaddrinfo(NULL, PORT, &hints, &res);
+    if (port == NULL) port = &PORT[0];
+    
+    int err = getaddrinfo(NULL, port, &hints, &res);
     if(err != 0){
         syslog(LOG_ERR, "getaddrinfo: %s", gai_strerror(err));
         exit(EXIT_FAILURE);

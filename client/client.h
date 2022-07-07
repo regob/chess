@@ -3,6 +3,7 @@
 #include <QObject>
 #include <QtNetwork>
 #include <QString>
+#include <QStringList>
 
 #include "../message.hpp"
 
