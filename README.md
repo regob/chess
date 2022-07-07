@@ -49,7 +49,7 @@ A kliensek bejelentkezés (bal) és játékra jelentkezés után összepárosít
      <img src="./assets/2_b_start.png" width="45%">
 </p>
 
-Első lépés (bal) majd a megnyitás (Ruy-Lopez Morphy defence):
+Első lépés (bal) majd a megnyitás (Ruy-Lopez Morphy defence) (jobb):
 
 <p align="center">
    <img src="./assets/3_b_first_move.png" width="45%">

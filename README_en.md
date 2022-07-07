@@ -33,6 +33,47 @@ qmake ../client.pro
 make
 ```
 
+## Sample run
+
+We start the server on localhost on port 54242:
+```
+$ lsof -iTCP -sTCP:LISTEN
+COMMAND     PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+server    14464 rego    3u  IPv4 351126      0t0  TCP *:54242 (LISTEN)
+```
+
+After logging in (left) and entering the queue with the clients, they get matched up (right):
+
+<p align="center">
+     <img src="./assets/1_a_logged_in.png" width="45%">
+     &nbsp; &nbsp; &nbsp; &nbsp;
+     <img src="./assets/2_b_start.png" width="45%">
+</p>
+
+First move (left), and the opening (Ruy-Lopez Morphy defence) are shown (right):
+
+<p align="center">
+   <img src="./assets/3_b_first_move.png" width="45%">
+   &nbsp; &nbsp; &nbsp; &nbsp;
+   <img src="./assets/4_a_opening.png" width="45%">
+</p>
+
+The possible moves are shown in amber when choosing a piece:
+
+<p align="center">
+  <img src="./assets/5_a_moves.png" width="45%">
+   &nbsp; &nbsp; &nbsp; &nbsp;
+  <img alt="" src="./assets/6_b_midgame.png" width="45%">
+</p>
+
+End of game, black loses, although being up in material:
+
+<p align="center">
+  <img alt="" src="./assets/7_a_timeout.png" width="45%">
+&nbsp; &nbsp; &nbsp; &nbsp;
+  <img alt="" src="./assets/8_b_timeout.png" width="45%">
+</p>
+
 
 ## The network protocol
 The messages: (all of them end in '\n')
