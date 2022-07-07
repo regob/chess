@@ -33,18 +33,38 @@ make
 ```
 
 ## Példafuttatás
+
+A szervert elindítottam a localhoston az 54242-es porton:
+```
+$ lsof -iTCP -sTCP:LISTEN
+COMMAND     PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+server    14464 rego    3u  IPv4 351126      0t0  TCP *:54242 (LISTEN)
+```
+
 A kliensek bejelentkezés és játékra jelentkezés után összepárosítódnak és bekerülnek egy új játékba:
 
 <p align="center">
-  <img alt="A kliens bejelentkés után." src="./assets/1_a_logged_in.png" width="45%">
-&nbsp; &nbsp; &nbsp; &nbsp;
-  <img alt="Játék indítása." src="./assets/2_b_start.png" width="45%">
+   <figure>
+     <img src="./assets/1_a_logged_in.png" width="45%">
+     <figcaption>A kliens bejelentkezés után.</figcaption>
+   </figure>
+     &nbsp; &nbsp; &nbsp; &nbsp;
+   <figure>
+     <img src="./assets/2_b_start.png" width="45%">
+     <figcaption>Játék indítása.</figcaption>
+   </figure>
 </p>
 
 <p align="center">
-  <img alt="Az első lépés, világos kezd." src="./assets/3_b_first_move.png" width="45%">
-&nbsp; &nbsp; &nbsp; &nbsp;
-  <img alt="Első néhány lépés (Ruy-Lopez Morphy defence)" src="./assets/4_a_opening.png" width="45%">
+   <figure>
+   <img src="./assets/3_b_first_move.png" width="45%">
+   <figcaption>Az első lépés, világos kezd.</figcaption>
+   </figure>
+   &nbsp; &nbsp; &nbsp; &nbsp;
+   <figure>
+   <img src="./assets/4_a_opening.png" width="45%">
+   <figcaption>alt=Első néhány lépés (Ruy-Lopez Morphy defence)</figcaption>
+   </figure>
 </p>
 
 <p align="center">
